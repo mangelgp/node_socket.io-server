@@ -24,6 +24,10 @@
 
         socket.emit('mensaje', {nombre: 'Fernando'});
 
+        socket.on('nuevo-mensaje', function(payload) {
+            console.log('Recibi:', payload)
+        })
+
         socket.on('mensaje', function (payload) {
             console.log('Escuchando:', payload);
             
