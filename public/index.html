@@ -22,7 +22,7 @@
             console.log('Desconectado del servidor')
         })
 
-        socket.emit('mensaje', {nombre: 'Fernando'});
+        socket.emit('mensaje', {nombre: 'Negador conectado'});
 
         socket.on('nuevo-mensaje', function(payload) {
             console.log('Recibi:', payload)
@@ -31,6 +31,11 @@
         socket.on('mensaje', function (payload) {
             console.log('Escuchando:', payload);
             
+        })
+
+        socket.on('bands', function (bands) {
+            console.clear()
+            console.table(bands)
         })
 
     </script>
